@@ -1,0 +1,431 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&amp;display=swap');
+
+:root{
+    --light: #011627;
+    --color-text: #fdfffc;
+    --box-shadow: 5px 5px 15px #0d1b2a, -5px -5px 15px #000814;
+    --gradiente: linear-gradient(-45deg, #f17908e5, #f07b0e);
+}
+
+body{
+    color: var(--color-text);
+    background-color: var(--light);
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.logo{
+    text-align: center;
+    cursor: pointer;
+}
+.container{
+    width: 1200px;
+    max-width: 80%;
+    margin: auto;
+}
+
+.banner{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 60% 40%;   
+}
+.banner .content{
+    text-align: justify;
+    padding-right: 50px;
+}
+
+.banner .content h1{
+    font-size: 4em;
+    text-align: center;
+    margin: 0;
+}
+
+.gradientText{
+    display: inline-block;
+    background: var(--gradiente);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.job{
+    display: block;
+    font-size: 44px;     
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 26ch;   
+
+    animation: typing 3s steps(26), blink .5s infinite step-end alternate;    
+}
+
+.job::before{
+    content: attr(data-job1);
+    
+    display: inline-flex;
+    animation: effectText 4s linear infinite alternate,
+    changeText 4s linear infinite, repeatJob 10s linear infinite;    
+}
+
+.find{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 50px;
+}
+
+@keyframes typing {
+    from { width: 0}
+}
+
+@keyframes blink {
+    50% {border-color: transparent}
+}
+
+@keyframes repeatJob {
+    85%, 100% {
+        content: attr(data-job1);
+    }
+    90% {
+        content: attr(data-job1);
+    }
+}
+
+.find{
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+
+    .vitae{        
+        text-align: center;
+        justify-content: center;
+        margin-left: 30px;       
+        
+    }
+
+    .vitae a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .social{
+        text-align: center;
+        justify-content: center;        
+        margin-right: 30px;        
+    }
+
+    .social a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.find ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.find ul li{
+    width: 50px;
+    height: 50px;
+    box-shadow: var(--box-shadow);
+    margin: 10px 15px 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-size: 20px;    
+}
+.find ul li:hover{
+    color: #fff;
+    background-image: var(--gradiente);    
+}
+
+.banner .avatar{
+    position: relative;
+    height: max-content;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.skills{
+    display: flex;
+    height: 50px;
+    justify-content: center;    
+}
+
+
+.skills img{
+    margin: 30px 20px 0 20px;
+}
+
+.listSkill{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 80px;
+}
+.listSkill .evaluate{
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+.listSkill .evaluate::before{
+    position: absolute;
+    width: var(--point) ;
+    height: 100%;
+    background-image: var(--gradiente);
+    content: '';
+    border-radius: 10px;
+}
+.listProyect{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 50px;
+}
+.listProyect .item{
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+.listProyect .item img{
+    width: 80%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.listProyect .item img:hover{
+    width: 80%;
+}
+.listProyect .item{
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.contact{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.contact li{
+    width: 50px;
+    height: 50px;
+    box-shadow: var(--box-shadow);    
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-size: 20px;
+}
+.contact li:hover{
+    background-image: var(--gradiente);
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 1024px){
+    .banner{
+        grid-template-columns: 40% 60%;
+    }
+    .banner .content h1{
+        font-size: 2em;
+    }
+    .listProyect{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner .content h1{     
+        font-size: 24px;
+    }
+
+    .content h1{
+        width: 250px;
+        text-align: center;
+        justify-content: center;                
+    }
+
+    .job{        
+        font-size: 22px;
+        justify-content: center;
+        }
+        
+    p{
+        text-align: center;
+        font-size: 14px;
+        width: 250px;
+        justify-content: center;
+    }
+
+    .find{        
+        display: flex;        
+    }
+
+    .vitae {
+        font-size: 14PX;
+        margin-left: 30px;
+    }
+
+    .social{
+        font-size: 14PX;
+        margin-right: 30px;       
+    }
+
+    .skills{
+        margin: 30px 500px 0 300px;
+    }   
+
+    .banner .avatar{
+        width: 340px;
+        }
+        img{            
+            width: 400px;
+        }  
+        
+        .avatar img{
+            width: 200px;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+}
+
+@media only screen and (max-width: 767px){
+    .banner{
+        grid-template-columns: 1fr;
+    }
+    .banner .content h1{
+        font-size: 1.2em;
+    }
+    .banner .avatar{
+        grid-row-start: 1;
+    }
+    .banner .content{
+        padding-right: 0px;
+    }    
+    .listProyect{
+        grid-template-columns: 1fr;
+    }
+
+    .banner .content{
+        width: 340PX;
+        justify-content: center;
+        h1{
+            font-size: 30px;
+        }
+    }
+
+    .logo h1{
+        margin-bottom: 5px;
+    }
+
+    .content h1{
+        width: 340px;        
+    }
+
+    .job{        
+        font-size: 22px;
+        }
+    .content p{
+        width: 340px;
+        text-align: justify;                   
+        }       
+
+    .vitae {
+        font-size: 12PX;
+        margin: 0;
+    }
+
+    .social{
+        font-size: 12PX;        
+    }
+
+    .find{
+        margin: 0 5px 0 5px;
+    }    
+
+    .find h3{
+        font-size: 12px;
+    }
+    
+    .find ul li{
+        width: 30px;
+        height: 30px;
+        box-shadow: var(--box-shadow);
+        margin: 5px 5px 5px 5px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+        font-size: 15px;        
+    }
+
+    .banner .avatar{
+        width: 340px;
+        }
+        img{            
+            width: 200px;            
+        }        
+    }    
+
+    .skill{
+        .title{
+            margin: 30px;
+            font-size: 24px;
+        }        
+
+        .skills img{            
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .skills{
+        margin: 10px 40px 0 40px;
+    }    
+
+    .project{
+        .title{
+            font-size: 24px;
+        }
+    }   
+
+    .conta{
+        .title{
+            margin-top: 30px;
+            font-size: 24px;            
+        }
+
+        .contact{
+            margin-top: 10px;
+        }
+    }   
+
+.soporte{
+    text-align: center;
+    margin: 40px;
+}
